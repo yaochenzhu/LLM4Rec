@@ -1,0 +1,7 @@
+fsspec
+numpy==1.23.0
+scipy==1.8.0
+torch==2.0.0
+transformers==4.24.0
+wget==3.2
+accelerate
