@@ -11,7 +11,7 @@ The proposed CLLM4Rec is the **first** recommender system that tightly combines 
 ## 2. Structure of Codes
 
 ### 2.1. Horizontal Structure
-We implement the following main classes based on the huggingface🤗 [transformer](https://github.com/huggingface/transformers) library.
+We implement the following main classes based on the Hugging Face🤗 [transformer](https://github.com/huggingface/transformers) library.
 
 #### 2.1.1. GPT4Rec Tokenizer Class:
 **TokenizerWithUserItemIDTokens** breaks down the word sequence into tokens, where user/item tokens are introduced. Specifically, if the vocabulary size of the original tokenizer is $N$, for a system with $I$ users and $J$ items, user ID words, i.e., "user_i" and "item_j", are treated as atomic tokens, where the tokenized ID for token "user_i" is $N+i$, whereas the tokenized ID for token "item_j" is $N+I+j$. **Demo:**
