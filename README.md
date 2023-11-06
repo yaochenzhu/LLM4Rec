@@ -4,12 +4,18 @@ These codes are associated with the following [paper](https://arxiv.org/abs/2311
 >Collaborative Large Language Model for Recommender Systems  
 >**Yaochen Zhu**, Liang Wu, Qi Guo, Liangjie Hong, Jundong Li,   
 >ArXiv 2023.
+
+which is a joint research from University of Virginia and LinkedIn.
   
 ## 1. Introduction
 The proposed CLLM4Rec is the **first** recommender system that tightly combines the ID-based paradigm and LLM-based paradigm and leverages the advantages of both worlds.   
+
+With the following **mutually-regularized pretraining with soft+hard prompting** strategy, language modeling can be effectively conducted on recommendation-oriented corpora with heterogenous user/item tokens.
 <p align="center">
 <img src="LLM4Rec.jpeg" alt="RLMRec" width="66.6%" />
 </p>
+
+We also proposed a **recommendation-oriented finetuning strategty**, such that recommendation of multiple items with the **whole item space** as the candidate set can be effectively generated.
 
 ## 2. Structure of Codes
 
@@ -25,7 +31,11 @@ Hello, user_1! Have you seen item_2?
 [15496, 11, 50258, 0, 8192, 345, 1775, 50269, 30]
 ```
 #### 2.1.2. GPT4Rec Base Model Class:
-**GPT4RecommendationBaseModel** is the base class for collaborative GPT for recommender systems.  This class extends the vocabulary of the original GPT2 model with the user/item ID tokens. In our implementation, we randomly initialize the user/item ID embeddings. In the training time, we load the token embeddings for the original vocabulary and the transformer weights, and we freeze them so that only user/item ID embeddings can be updated. **Demo:**
+**GPT4RecommendationBaseModel** is the base class for collaborative GPT for recommender systems.  
+
+This class extends the vocabulary of the original GPT2 model with the user/item ID tokens. In our implementation, we randomly initialize the user/item ID embeddings. In the training time, we load the token embeddings for the original vocabulary and the transformer weights, and we freeze them so that only user/item ID embeddings can be updated.
+
+**Demo:**
 
 ```
 input_ids:
@@ -124,7 +134,11 @@ tensor([[[ 1.4444,  0.0186],
 
 #### 2.1.3. Collaborative GPT Class:
 
-**CollaborativeGPTwithItemLMHeadBatch** defines the collaborative GPT, which gives prompts in the form "user_i has interacted with", to do language modeling (i.e., next token prediction) for the interacted item sequences, i.e., "item_j item_k item_z". In this case, when doing next token prediction, we only need to calculate softmax over the **item space**. **Demo:**
+**CollaborativeGPTwithItemLMHeadBatch** defines the collaborative GPT, which gives prompts in the form "user_i has interacted with", to do language modeling (i.e., next token prediction) for the interacted item sequences, i.e., "item_j item_k item_z". 
+
+In this case, when doing next token prediction, we only need to calculate softmax over the **item space**. 
+
+**Demo:**
 
 ```
 Prompt ids: tensor([[50257,   468, 49236,   351],
@@ -211,7 +225,13 @@ Calculated loss: 14.4347
 ```
 #### 2.1.4. Content GPT Class:
 
-**ContentGPTForUserItemWithLMHeadBatch** defines the content GPT that conducts language modeling on user/item content. Take  Amazon review data as an example, it treats "user_i writes the following review for item_j" as the prompt, while conducting language modeling (i.e., next token prediction) on the main review texts. In this case, when predicting next tokens, we only need to calculate the softmax over the **vocabulary space. Demo**:
+**ContentGPTForUserItemWithLMHeadBatch** defines the content GPT that conducts language modeling on user/item content. 
+
+Take  Amazon review data as an example, it treats "user_i writes the following review for item_j" as the prompt, while conducting language modeling (i.e., next token prediction) on the main review texts. 
+
+In this case, when predicting next tokens, we only need to calculate the softmax over the **vocabulary space. 
+
+Demo**:
 
 ```
 Prompt ids: tensor([[50257,  2630,   262,  1708,  2423,   329, 51602,    25],
@@ -241,7 +261,9 @@ Calculated loss: 3.9180
 ```
 #### 2.1.5. Rec GPT Class:
 
-**CollaborativeGPTwithItemRecommendHead** defines the recommendation GPT, where we randomly mask out items in the interaction history of the users and predict the hold-out items with multinomial likelihood. **Demo:**
+**CollaborativeGPTwithItemRecommendHead** defines the recommendation GPT, where we randomly mask out items in the interaction history of the users and predict the hold-out items with multinomial likelihood. 
+
+**Demo:**
 ```
 num_users: 10553
 num_items: 6086
@@ -346,7 +368,11 @@ The codes are written in Python 3.9
 
 Details see src/requirements.txt
 
-## 4. How to Run the Codes
+## 4. Datasets
+
+The datasets used in this paper can be accessed here.
+
+## 5. How to Run the Codes
 source/run.sh    
 
 ## 🌟 Citation
