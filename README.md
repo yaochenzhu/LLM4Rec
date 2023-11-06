@@ -1,12 +1,15 @@
 # CLLM4Rec: Collaborative Large Language Model for Recommender Systems
 
-These codes are associated with the following paper:
+These codes are associated with the following [paper](https://arxiv.org/abs/2311.01343):
 >Collaborative Large Language Model for Recommender Systems  
 >**Yaochen Zhu**, Liang Wu, Qi Guo, Liangjie Hong, Jundong Li,   
 >ArXiv 2023.
   
 ## 1. Introduction
-The proposed CLLM4Rec is the **first** recommender system that tightly combines the ID-based paradigm and LLM-based paradigm and leverages the advantages of both worlds. 
+The proposed CLLM4Rec is the **first** recommender system that tightly combines the ID-based paradigm and LLM-based paradigm and leverages the advantages of both worlds.   
+<p align="center">
+<img src="LLM4Rec.jpeg" alt="RLMRec" width="66.6%" />
+</p>
 
 ## 2. Structure of Codes
 
@@ -345,3 +348,15 @@ Details see src/requirements.txt
 
 ## 4. How to Run the Codes
 source/run.sh    
+
+## 🌟 Citation
+If you find this work is helpful to your research, please consider citing our paper:
+```
+@article{zhu2023collaborative,
+  title={Collaborative Large Language Model for Recommender Systems},
+  author={Yaochen Zhu and Liang Wu and Qi Guo and Liangjie Hong and Jundong Li},
+  journal={arXiv preprint arXiv:2311.01343},
+  year={2023}
+}
+```
+**Thanks for your interest in our work!**
