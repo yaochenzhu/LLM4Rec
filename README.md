@@ -229,9 +229,9 @@ Calculated loss: 14.4347
 
 Take  Amazon review data as an example, it treats "user_i writes the following review for item_j" as the prompt, while conducting language modeling (i.e., next token prediction) on the main review texts. 
 
-In this case, when predicting next tokens, we only need to calculate the softmax over the **vocabulary space. 
+In this case, when predicting next tokens, we only need to calculate the softmax over the **vocabulary space**. 
 
-Demo**:
+**Demo**:
 
 ```
 Prompt ids: tensor([[50257,  2630,   262,  1708,  2423,   329, 51602,    25],
