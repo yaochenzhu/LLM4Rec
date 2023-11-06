@@ -3,9 +3,9 @@
 These codes are associated with the following [paper](https://arxiv.org/abs/2311.01343):
 >Collaborative Large Language Model for Recommender Systems  
 >**Yaochen Zhu**, Liang Wu, Qi Guo, Liangjie Hong, Jundong Li,   
->ArXiv 2023.
+>ArXiv 2023,
 
-which is a joint research from University of Virginia and LinkedIn.
+which is a joint research from the University of Virginia [VAST LAB](https://jundongli.github.io/) and LinkedIn.
   
 ## 1. Introduction
 The proposed CLLM4Rec is the **first** recommender system that tightly combines the ID-based paradigm and LLM-based paradigm and leverages the advantages of both worlds.   
@@ -370,7 +370,7 @@ Details see src/requirements.txt
 
 ## 4. Datasets
 
-The datasets used in this paper can be accessed here.
+The datasets used in this paper can be accessed [here]().
 
 ## 5. How to Run the Codes
 source/run.sh    
