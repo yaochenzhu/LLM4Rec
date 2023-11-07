@@ -33,7 +33,7 @@ Hello, user_1! Have you seen item_2?
 #### 2.1.2. GPT4Rec Base Model Class:
 **GPT4RecommendationBaseModel** is the base class for collaborative GPT for recommender systems.  
 
-This class extends the vocabulary of the original GPT2 model with the user/item ID tokens. In our implementation, we randomly initialize the user/item ID embeddings. In the training time, we load the token embeddings for the original vocabulary and the transformer weights, and we freeze them so that only user/item ID embeddings can be updated.
+This class extends the vocabulary of the original GPT2 with the user/item ID tokens. In our implementation, we randomly initialize the user/item ID embeddings. In the training time, we load the token embeddings for the original vocabulary and the transformer weights, and we freeze them so that only user/item ID embeddings can be updated.
 
 **Demo:**
 
