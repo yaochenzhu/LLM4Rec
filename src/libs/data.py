@@ -185,8 +185,9 @@ class RecommendationGPTTrainGeneratorBatch(Dataset):
 
         target_matrix = torch.zeros(self.num_items, dtype=torch.float32)
         target_matrix[target_interactions] = 1.0
+        item_ids = target_matrix.nonzero()[0]
         
-        return input_prompt, target_matrix
+        return input_prompt, target_matrix, item_ids
 
     def collate_fn(self, batch):
         """
@@ -201,14 +202,17 @@ class RecommendationGPTTrainGeneratorBatch(Dataset):
                 Tuple containing the encoded and padded prompt IDs,
                 target matrix, and attention mask.
         """
-        prompt_texts, target_matrices = zip(*batch)
+        prompt_texts, target_matrices, item_ids = zip(*batch)
 
         # Encode and pad the prompt and main texts
         encoded_prompt = self.tokenizer.encode_batch(prompt_texts)
         target_matrices = torch.cat([matrix.unsqueeze(0) for matrix in target_matrices])
+        item_tokens = [" ".join(["item_" + str(item_id) for item_id in ids]) for ids in item_ids]
+        encoded_main = self.tokenizer.encode_batch(item_tokens)
 
         # Get the prompt IDs, target matrices, and attention masks
         prompt_ids = torch.tensor(encoded_prompt[0])
+        main_ids = torch.tensor(encoded_main[0])
         attention_mask = torch.tensor(encoded_prompt[1])
 
         # Truncate prompt IDs and attention mask if total length exceeds the maximum length
@@ -218,7 +222,7 @@ class RecommendationGPTTrainGeneratorBatch(Dataset):
             prompt_ids = prompt_ids[:, :-excess_length]
             attention_mask = attention_mask[:, :-excess_length]
 
-        return prompt_ids, target_matrices, attention_mask
+        return prompt_ids, target_matrices, attention_mask, main_ids
 
 
 class RecommendationGPTTestGeneratorBatch(Dataset):
