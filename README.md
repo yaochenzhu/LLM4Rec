@@ -3,7 +3,7 @@
 These codes are associated with the following [paper](https://arxiv.org/abs/2311.01343):
 >Collaborative Large Language Model for Recommender Systems  
 >**Yaochen Zhu**, Liang Wu, Qi Guo, Liangjie Hong, Jundong Li,   
->ArXiv 2023,
+>The Web Conf 2024.
 
 which is a joint research from the University of Virginia [VAST LAB](https://jundongli.github.io/) and LinkedIn.
   
