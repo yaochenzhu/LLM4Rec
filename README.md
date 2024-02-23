@@ -3,7 +3,7 @@
 These codes are associated with the following [paper](https://arxiv.org/abs/2311.01343):
 >Collaborative Large Language Model for Recommender Systems  
 >**Yaochen Zhu**, Liang Wu, Qi Guo, Liangjie Hong, Jundong Li,   
->The Web Conf 2024.
+>The ACM Web Conference (WWW) 2024.
 
 which is a joint research from the University of Virginia [VAST LAB](https://jundongli.github.io/) and LinkedIn.
   
@@ -15,7 +15,7 @@ With the following **mutually-regularized pretraining with soft+hard prompting**
 <img src="LLM4Rec.jpeg" alt="RLMRec" width="66.6%" />
 </p>
 
-We also proposed a **recommendation-oriented finetuning strategty**, such that recommendation of multiple items with the **whole item space** as the candidate set can be effectively generated.
+We also proposed a **recommendation-oriented finetuning strategty**, such that recommendation of multiple items with the **whole item space** as the candidate set can be effectively generated without hallucination.
 
 ## 2. Structure of Codes
 
