@@ -372,7 +372,12 @@ Details see src/requirements.txt
 
 The datasets used in this paper can be accessed [here](https://drive.google.com/file/d/1G4t64tzAlXN0gq_0TJ5Wik8dsERz8pMJ/view?usp=drive_link).
 
-## 5. How to Run the Codes
+## 5. Pretrained Weights
+
+The pretrained weights of GPT-2 used in this paper can be downloaded [here](https://huggingface.co/openai-community/gpt2/tree/main),
+as well as the original tokenizer that we modified by introducing user/item tokens.
+
+## 6. How to Run the Codes
 source/run.sh    
 
 ## 🌟 Citation
