@@ -55,7 +55,7 @@ def save_remote(local_path, remote_path, local_mode, remote_mode):
         f.write(content)
 
 
-server_root = "hdfs://llm4rec"
+gpt2_server_root = "hdfs://llm4rec"
 local_root = "tmp"
 if not os.path.exists(local_root):
     os.makedirs(local_root, exist_ok=True)
