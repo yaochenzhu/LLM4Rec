@@ -350,7 +350,7 @@ The codes are composed of three files that defines the pretraining, fine-tuning,
 Define the pretraining stage of CLLM4Rec. 
 
 ```src/finetuning.py```:    
-Dedine the finetuning stage of CLLM4Rec.
+Define the finetuning stage of CLLM4Rec.
 
 ```src/predict.py```:     
 Evaluate the trained model and save the results.
