@@ -1,3 +1,8 @@
+'''
+MIT License
+Copyright (c) 2024 Yaochen Zhu
+'''
+
 import random
 import fsspec
 import pickle
