@@ -1,3 +1,8 @@
+'''
+MIT License
+Copyright (c) 2024 Yaochen Zhu
+'''
+
 import re
 import numpy as np
 from transformers import GPT2Tokenizer
