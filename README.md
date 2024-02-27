@@ -1,6 +1,6 @@
 # CLLM4Rec: Collaborative Large Language Model for Recommender Systems
 
-These codes are associated with the following [paper](https://arxiv.org/abs/2311.01343):
+These codes are associated with the following paper [[pdf]](https://arxiv.org/abs/2311.01343):
 >Collaborative Large Language Model for Recommender Systems  
 >**Yaochen Zhu**, Liang Wu, Qi Guo, Liangjie Hong, Jundong Li,   
 >The ACM Web Conference (WWW) 2024.
@@ -370,11 +370,11 @@ Details see src/requirements.txt
 
 ## 4. Datasets
 
-The datasets used in this paper can be accessed [here](https://drive.google.com/file/d/1G4t64tzAlXN0gq_0TJ5Wik8dsERz8pMJ/view?usp=drive_link).
+The datasets used in this paper can be accessed [[here]](https://drive.google.com/file/d/1G4t64tzAlXN0gq_0TJ5Wik8dsERz8pMJ/view?usp=drive_link).
 
 ## 5. Pretrained Weights
 
-The pretrained weights of GPT-2 used in this paper can be downloaded [here](https://huggingface.co/openai-community/gpt2/tree/main),
+The pretrained weights of GPT-2 used in this paper can be downloaded [[here]](https://huggingface.co/openai-community/gpt2/tree/main),
 as well as the original tokenizer that we modified by introducing user/item tokens.
 
 ## 6. How to Run the Codes
