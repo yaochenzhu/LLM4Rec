@@ -1,3 +1,8 @@
+'''
+MIT License
+Copyright (c) 2024 Yaochen Zhu
+'''
+
 import torch
 import torch.nn as nn
 from torch.nn import BCEWithLogitsLoss, CrossEntropyLoss, MSELoss
