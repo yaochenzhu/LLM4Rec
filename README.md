@@ -380,7 +380,7 @@ The pretrained weights of GPT-2 used in this paper can be downloaded [[here]](ht
 as well as the original tokenizer that we modified by introducing user/item tokens.
 
 ## 6. How to Run the Codes
-script/run.sh    
+see scripts/run.sh    
 
 ## 🌟 Citation
 If you find this work is helpful to your research, please consider citing our paper:
